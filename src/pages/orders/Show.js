@@ -113,7 +113,7 @@ function Show({ user }) {
                     aria-label="multiple select example"
                   >
                     {/* <option selected>Open this select menu</option> */}
-                    <option value="Chicken Pho">Chicken Phos</option>
+                    <option value="Chicken Pho">Chicken Pho</option>
                     <option value="Beef Pho">Beef Pho</option>
                     <option value="Pork Pho">Pork Pho</option>
                     <option value="Chicken Soup">Chicken Soup</option>
