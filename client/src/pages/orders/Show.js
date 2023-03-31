@@ -13,6 +13,10 @@ function Show({ user }) {
   const navigate = useNavigate();
   const params = useParams();
   const bodyRef = useRef();
+  const phoRef = useRef();
+  const soupRef = useRef();
+  const drinksRef = useRef();
+
   const detailsRef = useRef();
 
   useEffect(() => {
@@ -52,7 +56,7 @@ function Show({ user }) {
     setOrder(updatedOrder);
     bodyRef.current.value = "";
     detailsRef.current.open = false;
-    setInput(null)
+    setInput(null);
   }
 
   return (
@@ -119,8 +123,7 @@ function Show({ user }) {
                   <select
                     ref={bodyRef}
                     class="form-select-lg"
-                    style={{ whiteSpace: "normal"
-                  , overflow: "hidden" }}
+                    style={{ whiteSpace: "normal", overflow: "hidden" }}
                     onChange={(e) => setInput(e.target.value)}
                     multiple
                     aria-label="multiple select example"
@@ -135,51 +138,497 @@ function Show({ user }) {
                     <option value="Chicken Rice">Chicken Rice</option>
                     <option value="Beef Rice">Beef Rice</option>
                     <option value="Pork Rice">Pork Rice</option>
-                    
+
                     <option value="Water">Water</option>
                     <option value="Coke">Coke</option>
                     <option value="Sprite">Sprite</option>
                   </select>
-                  
+
                   <div>
-                    {input && <button className="mx-2" value="" onClick={handleSubmit}>
-                      1
-                    </button>}
-                    {input && <button className="mx-2" value=" x2" onClick={handleSubmit}>
-                      2
-                    </button>}
-                    {input && <button className="mx-2" value=" x3" onClick={handleSubmit}>
-                      3
-                    </button>}
-                    {input && <button className="mx-2" value=" x4" onClick={handleSubmit}>
-                      4
-                    </button>}
-                    {input && <button className="mx-2" value=" x5" onClick={handleSubmit}>
-                      5
-                    </button>}
-                    {input && <button className="mx-2" value=" x6" onClick={handleSubmit}>
-                      6
-                    </button>}
-                    {input && <button className="mx-2" value=" x7" onClick={handleSubmit}>
-                      7
-                    </button>}
-                    {input && <button className="mx-2" value=" x8" onClick={handleSubmit}>
-                      8
-                    </button>}
-                    {input && <button className="mx-2" value=" x9" onClick={handleSubmit}>
-                      9
-                    </button>}
-                    {input && <button className="mx-2" value=" x10" onClick={handleSubmit}>
-                      10
-                    </button>}
+                    {input && (
+                      <button className="mx-2" value="" onClick={handleSubmit}>
+                        1
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x2"
+                        onClick={handleSubmit}
+                      >
+                        2
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x3"
+                        onClick={handleSubmit}
+                      >
+                        3
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x4"
+                        onClick={handleSubmit}
+                      >
+                        4
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x5"
+                        onClick={handleSubmit}
+                      >
+                        5
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x6"
+                        onClick={handleSubmit}
+                      >
+                        6
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x7"
+                        onClick={handleSubmit}
+                      >
+                        7
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x8"
+                        onClick={handleSubmit}
+                      >
+                        8
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x9"
+                        onClick={handleSubmit}
+                      >
+                        9
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x10"
+                        onClick={handleSubmit}
+                      >
+                        10
+                      </button>
+                    )}
                   </div>
                 </form>
+                <div class="accordion" id="accordionExample">
+                  {/* Pho */}
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Pho
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <form onSubmit={handleSubmit}>
+                          {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
+                          <select
+                            ref={phoRef}
+                            class="form-select-lg"
+                            style={{ whiteSpace: "normal", overflow: "hidden" }}
+                            onChange={(e) => setInput(e.target.value)}
+                            multiple
+                            aria-label="multiple select example"
+                          >
+                            {/* <option selected>Open this select menu</option> */}
+                            <option value="Chicken Pho">Chicken Pho</option>
+                            <option value="Beef Pho">Beef Pho</option>
+                            <option value="Pork Pho">Pork Pho</option>
+                          </select>
+
+                          <div>
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=""
+                                onClick={handleSubmit}
+                              >
+                                1
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x2"
+                                onClick={handleSubmit}
+                              >
+                                2
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x3"
+                                onClick={handleSubmit}
+                              >
+                                3
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x4"
+                                onClick={handleSubmit}
+                              >
+                                4
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x5"
+                                onClick={handleSubmit}
+                              >
+                                5
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x6"
+                                onClick={handleSubmit}
+                              >
+                                6
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x7"
+                                onClick={handleSubmit}
+                              >
+                                7
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x8"
+                                onClick={handleSubmit}
+                              >
+                                8
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x9"
+                                onClick={handleSubmit}
+                              >
+                                9
+                              </button>
+                            )}
+                            {input && (
+                              <button
+                                className="mx-2"
+                                value=" x10"
+                                onClick={handleSubmit}
+                              >
+                                10
+                              </button>
+                            )}
+                          </div>
+                        </form>{" "}
+                      </div>
+                    </div>
+                  </div>
+                  {/* Soup */}
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Soup
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                      <form onSubmit={handleSubmit}>
+                  {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
+                  <select
+                    ref={soupRef}
+                    class="form-select-lg"
+                    style={{ whiteSpace: "normal", overflow: "hidden" }}
+                    onChange={(e) => setInput(e.target.value)}
+                    multiple
+                    aria-label="multiple select example"
+                  >
+                    {/* <option selected>Open this select menu</option> */}
+                    <option value="Chicken Soup">Chicken Soup</option>
+                    <option value="Beef Soup">Beef Soup</option>
+                    <option value="Pork Soup">Pork Soup</option>
+                  </select>
+
+                  <div>
+                    {input && (
+                      <button className="mx-2" value="" onClick={handleSubmit}>
+                        1
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x2"
+                        onClick={handleSubmit}
+                      >
+                        2
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x3"
+                        onClick={handleSubmit}
+                      >
+                        3
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x4"
+                        onClick={handleSubmit}
+                      >
+                        4
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x5"
+                        onClick={handleSubmit}
+                      >
+                        5
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x6"
+                        onClick={handleSubmit}
+                      >
+                        6
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x7"
+                        onClick={handleSubmit}
+                      >
+                        7
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x8"
+                        onClick={handleSubmit}
+                      >
+                        8
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x9"
+                        onClick={handleSubmit}
+                      >
+                        9
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x10"
+                        onClick={handleSubmit}
+                      >
+                        10
+                      </button>
+                    )}
+                  </div>
+                </form>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Drinks */}
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Drinks
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                      <form onSubmit={handleSubmit}>
+                  {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
+                  <select
+                    ref={drinksRef}
+                    class="form-select-lg"
+                    style={{ whiteSpace: "normal", overflow: "hidden" }}
+                    onChange={(e) => setInput(e.target.value)}
+                    multiple
+                    aria-label="multiple select example"
+                  >
+                    {/* <option selected>Open this select menu</option> */}
+                    <option value="Water">Water</option>
+                    <option value="Coke">Coke</option>
+                    <option value="Sprite">Sprite</option>
+                  </select>
+
+                  <div>
+                    {input && (
+                      <button className="mx-2" value="" onClick={handleSubmit}>
+                        1
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x2"
+                        onClick={handleSubmit}
+                      >
+                        2
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x3"
+                        onClick={handleSubmit}
+                      >
+                        3
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x4"
+                        onClick={handleSubmit}
+                      >
+                        4
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x5"
+                        onClick={handleSubmit}
+                      >
+                        5
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x6"
+                        onClick={handleSubmit}
+                      >
+                        6
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x7"
+                        onClick={handleSubmit}
+                      >
+                        7
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x8"
+                        onClick={handleSubmit}
+                      >
+                        8
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x9"
+                        onClick={handleSubmit}
+                      >
+                        9
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x10"
+                        onClick={handleSubmit}
+                      >
+                        10
+                      </button>
+                    )}
+                  </div>
+                </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
             <div className="buttons">
               {order.user === user && (
-                  <button onClick={handleDeleteOrder}>Delete</button>
+                <button onClick={handleDeleteOrder}>Delete</button>
               )}
               <Link to="/orders">
                 <button>Back</button>
