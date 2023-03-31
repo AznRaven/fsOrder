@@ -60,7 +60,7 @@ function Show({ user }) {
   }
 
   return (
-    <div>
+    <div className=" bg-dark text-white text-center">
       <div className="a-order">
         <h2>{order.subject}</h2>
         <h5 style={{ opacity: ".3" }} className="m-0">
@@ -69,24 +69,14 @@ function Show({ user }) {
           {new Date(order.createdAt).toLocaleTimeString()}
         </h5>
         <div className="p-body m-0">{order.body}</div>
-        {/* <div className="buttons">
-          {order.user === user && (
-            <>
-              <button onClick={handleDeleteOrder}>Delete</button>
-              <Link to={`/orders/${order._id}/edit`}>
-                <button>Edit</button>
-              </Link>
-            </>
-          )}
-          <Link to="/orders">
-            <button>Back</button>
-          </Link>
-        </div> */}
         <div class="row g-0 text-center">
-          <div class="col-sm-6 col-md-2">
+          <div class="col-sm-6 col-md-2 ">
             {order.comments?.length ? (
               <>
-                <div>Order:</div>
+              <br/>
+              <br/>
+              <br/>
+                <div className="fs-2">Items Ordered</div>
                 <div>
                   {order.comments.map((comment, i) => (
                     <div key={i} className="comm">
@@ -117,126 +107,11 @@ function Show({ user }) {
           <div class="col-6 col-md-10">
             {user && (
               <div ref={detailsRef}>
-                <summary style={{ opacity: ".5" }}>{input}</summary>
-                <form onSubmit={handleSubmit}>
-                  {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
-                  <select
-                    ref={bodyRef}
-                    class="form-select-lg"
-                    style={{ whiteSpace: "normal", overflow: "hidden" }}
-                    onChange={(e) => setInput(e.target.value)}
-                    multiple
-                    aria-label="multiple select example"
-                  >
-                    {/* <option selected>Open this select menu</option> */}
-                    <option value="Chicken Pho">Chicken Pho</option>
-                    <option value="Beef Pho">Beef Pho</option>
-                    <option value="Pork Pho">Pork Pho</option>
-                    <option value="Chicken Soup">Chicken Soup</option>
-                    <option value="Beef Soup">Beef Soup</option>
-                    <option value="Pork Soup">Pork Soup</option>
-                    <option value="Chicken Rice">Chicken Rice</option>
-                    <option value="Beef Rice">Beef Rice</option>
-                    <option value="Pork Rice">Pork Rice</option>
-
-                    <option value="Water">Water</option>
-                    <option value="Coke">Coke</option>
-                    <option value="Sprite">Sprite</option>
-                  </select>
-
-                  <div>
-                    {input && (
-                      <button className="mx-2" value="" onClick={handleSubmit}>
-                        1
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x2"
-                        onClick={handleSubmit}
-                      >
-                        2
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x3"
-                        onClick={handleSubmit}
-                      >
-                        3
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x4"
-                        onClick={handleSubmit}
-                      >
-                        4
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x5"
-                        onClick={handleSubmit}
-                      >
-                        5
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x6"
-                        onClick={handleSubmit}
-                      >
-                        6
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x7"
-                        onClick={handleSubmit}
-                      >
-                        7
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x8"
-                        onClick={handleSubmit}
-                      >
-                        8
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x9"
-                        onClick={handleSubmit}
-                      >
-                        9
-                      </button>
-                    )}
-                    {input && (
-                      <button
-                        className="mx-2"
-                        value=" x10"
-                        onClick={handleSubmit}
-                      >
-                        10
-                      </button>
-                    )}
-                  </div>
-                </form>
-                <div class="accordion" id="accordionExample">
+                <div  style={{ }}>{input}</div>
+                <div class="accordion accordion-flush bg-dark" data-bs-theme="dark" id="accordionExample">
                   {/* Pho */}
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
+                  <div class="accordion-item bg-dark " >
+                    <h2 class="accordion-header ">
                       <button
                         class="accordion-button"
                         type="button"
@@ -254,18 +129,19 @@ function Show({ user }) {
                       data-bs-parent="#accordionExample"
                     >
                       <div class="accordion-body">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} >
                           {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
                           <select
                             ref={phoRef}
-                            class="form-select-lg"
+                            class="form-select-lg bg-dark text-white"
                             style={{ whiteSpace: "normal", overflow: "hidden" }}
                             onChange={(e) => setInput(e.target.value)}
                             multiple
                             aria-label="multiple select example"
+                            
                           >
                             {/* <option selected>Open this select menu</option> */}
-                            <option value="Chicken Pho">Chicken Pho</option>
+                            <option  value="Chicken Pho">Chicken Pho</option>
                             <option value="Beef Pho">Beef Pho</option>
                             <option value="Pork Pho">Pork Pho</option>
                           </select>
@@ -367,7 +243,7 @@ function Show({ user }) {
                     </div>
                   </div>
                   {/* Soup */}
-                  <div class="accordion-item">
+                  <div class="accordion-item  bg-dark">
                     <h2 class="accordion-header">
                       <button
                         class="accordion-button collapsed"
@@ -495,7 +371,7 @@ function Show({ user }) {
                     </div>
                   </div>
                   {/* Drinks */}
-                  <div class="accordion-item">
+                  <div class="accordion-item  bg-dark">
                     <h2 class="accordion-header">
                       <button
                         class="accordion-button collapsed"
@@ -623,6 +499,7 @@ function Show({ user }) {
                     </div>
                   </div>
                 </div>
+                
               </div>
             )}
 

@@ -78,7 +78,7 @@ function Show({ user }) {
                       <div>{comment.body}</div>
                       {comment.user === user && (
                         <>
-                          <button onClick={() => handleDeleteComment(comment)}>
+                          <button onClick={() => handleDeleteComment(comment)} style={{color: "red"}}>
                             X
                           </button>
                           <Link

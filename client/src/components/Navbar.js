@@ -8,7 +8,7 @@ function Navbar({ user, setUser }) {
   };
 
   return (
-    <ul className="user-auth">
+    <ul className="user-auth  bg-dark text-white">
       {user ? 
         <>
           <li style={{ color: "black" }}>Welcome {user}!</li>
