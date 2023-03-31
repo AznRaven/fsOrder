@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../services/orderService";
 
 function New({ user }) {
   let [table, setTable] = useState("");
+  let subjectRef = useRef();
+  let bodyRef = useRef();
   let navigate = useNavigate();
 
   async function handleSubmit(e) {
@@ -13,7 +15,7 @@ function New({ user }) {
       user,
     };
     const id = await createOrder(order);
-
+    console.log(id)
     navigate(`/orders/${id}`);
   }
 
@@ -31,8 +33,8 @@ function New({ user }) {
   }
 
   return (
-    <div className="text-center">
-      <h1>Select Table For New Order</h1>
+    <div>
+      <h1>New Order</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="tbl">Table:</label>
         <br />
@@ -40,7 +42,9 @@ function New({ user }) {
         <br />
         <br />
 
-        <div>{buttons}</div>
+        <div>
+          {buttons}
+        </div>
 
         {/* <label htmlFor="nme">Subject:</label>
         <br />

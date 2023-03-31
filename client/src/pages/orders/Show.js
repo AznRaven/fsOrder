@@ -41,12 +41,6 @@ function Show({ user }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const selectedOption = bodyRef.current.value;
-    const buttonNumber = e.target.value;
-
-    const newInput = `${selectedOption} ${buttonNumber}`;
-    setInput(newInput);
-
     let comment = {
       body: input + e.target.value,
       user,
@@ -60,15 +54,6 @@ function Show({ user }) {
     detailsRef.current.open = false;
     setInput(null)
   }
-  // async function multiply(e) {
-  //   e.preventDefault();
-
-  //   const selectedOption = bodyRef.current.value;
-  //   const buttonNumber = e.target.value;
-
-  //   const newInput = `${selectedOption} ${buttonNumber}`;
-  //   setInput(newInput);
-  // }
 
   return (
     <div>
@@ -79,7 +64,6 @@ function Show({ user }) {
           {new Date(order.createdAt).toLocaleDateString()} at{" "}
           {new Date(order.createdAt).toLocaleTimeString()}
         </h5>
-        <h1 className="text-center">Table: {order.table}</h1>
         <div className="p-body m-0">{order.body}</div>
         {/* <div className="buttons">
           {order.user === user && (
@@ -126,38 +110,37 @@ function Show({ user }) {
               ""
             )}
           </div>
-          {/* Add to Orders */}
-          <div class="col-6 col-md-10" >
+          <div class="col-6 col-md-10">
             {user && (
               <div ref={detailsRef}>
-                {/* <summary style={{ opacity: ".5" }}>Add To Order:</summary> */}
-
+                <summary style={{ opacity: ".5" }}>{input}</summary>
                 <form onSubmit={handleSubmit}>
+                  {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
                   <select
                     ref={bodyRef}
-                    style={{overflow: "hidden",whiteSpace: 'normal'}}
-                    class="form-select-lg text-center"
-                    size="6"
+                    class="form-select-lg"
+                    style={{ whiteSpace: "normal"
+                  , overflow: "hidden" }}
+                    onChange={(e) => setInput(e.target.value)}
                     multiple
                     aria-label="multiple select example"
-                    onChange={() => setInput(bodyRef.current.value)}
                   >
-                    <option value="Chicken Stir Fry">Chicken Stir Fry</option>
-                    <option value="Beef Stir Fry">Beef Stir Fry</option>
-                    <option value="Port Stir Fry">Port Stir Fry</option>
+                    {/* <option selected>Open this select menu</option> */}
                     <option value="Chicken Pho">Chicken Pho</option>
                     <option value="Beef Pho">Beef Pho</option>
                     <option value="Pork Pho">Pork Pho</option>
-                    <option value="Chicken Ramen">Chicken Ramen</option>
-                    <option value="Beef Ramen">Beef Ramen</option>
-                    <option value="Pork Ramen">Pork Ramen</option>
                     <option value="Chicken Soup">Chicken Soup</option>
                     <option value="Beef Soup">Beef Soup</option>
                     <option value="Pork Soup">Pork Soup</option>
+                    <option value="Chicken Rice">Chicken Rice</option>
+                    <option value="Beef Rice">Beef Rice</option>
+                    <option value="Pork Rice">Pork Rice</option>
+                    
                     <option value="Water">Water</option>
                     <option value="Coke">Coke</option>
                     <option value="Sprite">Sprite</option>
                   </select>
+                  
                   <div>
                     {input && <button className="mx-2" value="" onClick={handleSubmit}>
                       1
@@ -191,8 +174,6 @@ function Show({ user }) {
                     </button>}
                   </div>
                 </form>
-                
-                
               </div>
             )}
 

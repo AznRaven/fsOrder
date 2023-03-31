@@ -79,7 +79,7 @@ function Index({ user }) {
     let index = newOrders.findIndex((t) => t._id === id);
     let order = newOrders[index];
     order.paid = !order.paid;
-
+  
     await fetch(`/orders/${id}`, {
       method: "PUT",
       body: JSON.stringify(order),
@@ -87,7 +87,7 @@ function Index({ user }) {
         "Content-Type": "application/json",
       },
     });
-
+  
     setOrders(newOrders);
   }
   return (
@@ -119,71 +119,71 @@ function Index({ user }) {
       >
         {orders?.map((order, index) => (
           <div>
-           <Link to={`/orders/${order._id}`} key={index}>
-            <div
-              className={`a-order order m-2 shadow ${
-                new Date() - new Date(order.createdAt) > 30 * 60 * 1000
-                  ? "text-danger"
-                  : ""
-              }`}
-              style={{
-                border: new Date() - new Date(order.createdAt) > 30 * 60 * 1000
-                  ? "2px solid red"
-                  : "2px solid blue"
-              }}
+            <Link to={`/orders/${order._id}`} key={index}>
+              <div
+                className={`a-order order m-2 shadow ${
+                  new Date() - new Date(order.createdAt) > 30 * 60 * 1000
+                    ? "text-danger"
+                    : ""
+                }`}
+                style={{
+                  border:
+                    new Date() - new Date(order.createdAt) > 30 * 60 * 1000
+                      ? "2px solid red"
+                      : "2px solid blue",
+                }}
+              >
+                Time: {formatElapsedTime(order.createdAt)}
+                <br />
+                Table: {order.table}
+                <br />
+                {order.comments.map((x, index) => (
+                  <>
+                    {x.body}
+                    <br />
+                  </>
+                ))}
+              </div>
+            </Link>
+            <div></div>
+            {/* Completed */}
+            {/* <li
+              style={{ listStyle: "none" }}
+              className="justify-content-center align-items-end d-flex"
             >
-              <p className="fs-5 m-0">Time: {formatElapsedTime(order.createdAt)}</p>
-              {/* <br /> */}
-              <p className="fs-3 m-0">Table: {order.table}</p>
-              <hr/>
-              {/* <br /> */}
-              {order.comments.map((order, index) => (
-                <>
-                  <p className="m-0">{order.body}</p>
-                  
-                </>
-              ))}
-            </div>
-          </Link>
-          <div></div>
-              <li
-                style={{ listStyle: "none" }}
-                className="justify-content-center align-items-end d-flex"
-              >
-                <div class="form-check ">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    checked={order.completed}
-                    onChange={() => completeOrder(order._id)}
-                    value=""
-                    id="flexCheckChecked"
-                  />
-                  <label class="form-check-label" for="flexCheckChecked">
-                    Complete
-                  </label>
-                </div>
-              </li>
-              <li
-                style={{ listStyle: "none" }}
-                className="justify-content-center align-items-end d-flex"
-              >
-                <div class="form-check ">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    checked={order.paid}
-                    onChange={() => paidOrder(order._id)}
-                    value=""
-                    id="paidCheck"
-                  />
-                  <label class="form-check-label" for="paidCheck">
-                    Paid
-                  </label>
-                </div>
-              </li>
+              <div class="form-check ">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  checked={order.completed}
+                  value=""
+                  id={order.table}
+                />
+                <label class="form-check-label" for={order.table}>
+                  Completed
+                </label>
+              </div>
+            </li> */}
+            {/* Paid */}
+            {/* <li
+              style={{ listStyle: "none" }}
+              className="justify-content-center align-items-end d-flex"
+            >
+              <div class="form-check ">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  checked={order.paid}
+                  onChange={() => paidOrder(order._id)}
+                  value=""
+                  id={order._id}
+                />
+                <label class="form-check-label" for={order._id}>
+                  Paid
+                </label>
+              </div>
+            </li> */}
           </div>
-         
         ))}
       </div>
       {user && (
