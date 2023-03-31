@@ -52,7 +52,7 @@ function Show({ user }) {
     setOrder(updatedOrder);
     bodyRef.current.value = "";
     detailsRef.current.open = false;
-    setInput(null)
+    setInput(null);
   }
 
   return (
@@ -65,20 +65,8 @@ function Show({ user }) {
           {new Date(order.createdAt).toLocaleTimeString()}
         </h5>
         <div className="p-body m-0">{order.body}</div>
-        {/* <div className="buttons">
-          {order.user === user && (
-            <>
-              <button onClick={handleDeleteOrder}>Delete</button>
-              <Link to={`/orders/${order._id}/edit`}>
-                <button>Edit</button>
-              </Link>
-            </>
-          )}
-          <Link to="/orders">
-            <button>Back</button>
-          </Link>
-        </div> */}
         <div class="row g-0 text-center">
+          {/* Items Ordered */}
           <div class="col-sm-6 col-md-2">
             {order.comments?.length ? (
               <>
@@ -113,14 +101,13 @@ function Show({ user }) {
           <div class="col-6 col-md-10">
             {user && (
               <div ref={detailsRef}>
-                <summary style={{ opacity: ".5" }}>{input}</summary>
+                <summary className="fs-2">{input}</summary>
                 <form onSubmit={handleSubmit}>
                   {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
                   <select
                     ref={bodyRef}
                     class="form-select-lg"
-                    style={{ whiteSpace: "normal"
-                  , overflow: "hidden" }}
+                    style={{ whiteSpace: "normal", overflow: "hidden" }}
                     onChange={(e) => setInput(e.target.value)}
                     multiple
                     aria-label="multiple select example"
@@ -135,51 +122,211 @@ function Show({ user }) {
                     <option value="Chicken Rice">Chicken Rice</option>
                     <option value="Beef Rice">Beef Rice</option>
                     <option value="Pork Rice">Pork Rice</option>
-                    
+
                     <option value="Water">Water</option>
                     <option value="Coke">Coke</option>
                     <option value="Sprite">Sprite</option>
                   </select>
-                  
+
                   <div>
-                    {input && <button className="mx-2" value="" onClick={handleSubmit}>
-                      1
-                    </button>}
-                    {input && <button className="mx-2" value=" x2" onClick={handleSubmit}>
-                      2
-                    </button>}
-                    {input && <button className="mx-2" value=" x3" onClick={handleSubmit}>
-                      3
-                    </button>}
-                    {input && <button className="mx-2" value=" x4" onClick={handleSubmit}>
-                      4
-                    </button>}
-                    {input && <button className="mx-2" value=" x5" onClick={handleSubmit}>
-                      5
-                    </button>}
-                    {input && <button className="mx-2" value=" x6" onClick={handleSubmit}>
-                      6
-                    </button>}
-                    {input && <button className="mx-2" value=" x7" onClick={handleSubmit}>
-                      7
-                    </button>}
-                    {input && <button className="mx-2" value=" x8" onClick={handleSubmit}>
-                      8
-                    </button>}
-                    {input && <button className="mx-2" value=" x9" onClick={handleSubmit}>
-                      9
-                    </button>}
-                    {input && <button className="mx-2" value=" x10" onClick={handleSubmit}>
-                      10
-                    </button>}
+                    {input && (
+                      <button className="mx-2" value="" onClick={handleSubmit}>
+                        1
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x2"
+                        onClick={handleSubmit}
+                      >
+                        2
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x3"
+                        onClick={handleSubmit}
+                      >
+                        3
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x4"
+                        onClick={handleSubmit}
+                      >
+                        4
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x5"
+                        onClick={handleSubmit}
+                      >
+                        5
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x6"
+                        onClick={handleSubmit}
+                      >
+                        6
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x7"
+                        onClick={handleSubmit}
+                      >
+                        7
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x8"
+                        onClick={handleSubmit}
+                      >
+                        8
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x9"
+                        onClick={handleSubmit}
+                      >
+                        9
+                      </button>
+                    )}
+                    {input && (
+                      <button
+                        className="mx-2"
+                        value=" x10"
+                        onClick={handleSubmit}
+                      >
+                        10
+                      </button>
+                    )}
                   </div>
                 </form>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>
+                          This is the first item's accordion body.
+                        </strong>{" "}
+                        It is shown by default, until the collapse plugin adds
+                        the appropriate classes that we use to style each
+                        element. These classes control the overall appearance,
+                        as well as the showing and hiding via CSS transitions.
+                        You can modify any of this with custom CSS or overriding
+                        our default variables. It's also worth noting that just
+                        about any HTML can go within the{" "}
+                        <code>.accordion-body</code>, though the transition does
+                        limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                        aria-controls="collapseTwo"
+                      >
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>
+                          This is the second item's accordion body.
+                        </strong>{" "}
+                        It is hidden by default, until the collapse plugin adds
+                        the appropriate classes that we use to style each
+                        element. These classes control the overall appearance,
+                        as well as the showing and hiding via CSS transitions.
+                        You can modify any of this with custom CSS or overriding
+                        our default variables. It's also worth noting that just
+                        about any HTML can go within the{" "}
+                        <code>.accordion-body</code>, though the transition does
+                        limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                        aria-controls="collapseThree"
+                      >
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionExample"
+                    >
+                      <div class="accordion-body">
+                        <strong>
+                          This is the third item's accordion body.
+                        </strong>{" "}
+                        It is hidden by default, until the collapse plugin adds
+                        the appropriate classes that we use to style each
+                        element. These classes control the overall appearance,
+                        as well as the showing and hiding via CSS transitions.
+                        You can modify any of this with custom CSS or overriding
+                        our default variables. It's also worth noting that just
+                        about any HTML can go within the{" "}
+                        <code>.accordion-body</code>, though the transition does
+                        limit overflow.
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
             <div className="buttons">
-              {order.user === user && (
-                  <button onClick={handleDeleteOrder}>Delete</button>
+              {user && (
+                <button onClick={handleDeleteOrder}>Delete</button>
               )}
               <Link to="/orders">
                 <button>Back</button>
