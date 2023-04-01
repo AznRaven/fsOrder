@@ -11,7 +11,7 @@ function Navbar({ user, setUser }) {
     <ul className="user-auth  bg-dark text-white">
       {user ? 
         <>
-          <li style={{ color: "black" }}>Welcome {user}!</li>
+          <li style={{ color: "white" }}>Welcome {user}!</li>
           <li className="posts-nav">
             <Link to="/orders">Orders</Link>
           </li>

@@ -133,7 +133,10 @@ function Index({ user }) {
                       : "2px solid blue",
                 }}
               >
-                Time: {formatElapsedTime(order.createdAt)}
+                <div className="" style={{color: new Date() - new Date(order.createdAt) > 30 * 60 * 1000
+                      ? "red"
+                      : "white",
+                }}>Time: {formatElapsedTime(order.createdAt)}</div>
                 <br />
                 Table: {order.table}
                 <br />

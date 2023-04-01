@@ -39,7 +39,7 @@ function App() {
   let loggedIn = user.username;
 
   return (
-    <div className="App  bg-dark text-white">
+    <div className="App bg-dark text-white">
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
         <Route path="/orders" element={<IndexPost user={loggedIn} />} />

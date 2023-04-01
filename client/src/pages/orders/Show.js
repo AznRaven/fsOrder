@@ -60,7 +60,8 @@ function Show({ user }) {
   }
 
   return (
-    <div className="text-center">
+    <div className="text-center bg-dark">
+      {/* Ordered By */}
       <div className="a-order">
         <h2>{order.subject}</h2>
         <h5 style={{ opacity: ".3" }} className="m-0">
@@ -68,7 +69,8 @@ function Show({ user }) {
           {new Date(order.createdAt).toLocaleDateString()} at{" "}
           {new Date(order.createdAt).toLocaleTimeString()}
         </h5>
-        <div className="p-body m-0">{order.body}</div>
+        <br/>
+        <div className="p-body m-0 border-bottom">{order.body}</div>
         <div class="row g-0 text-center">
           <div class="col-sm-6 col-md-2 border-end">
             {order.comments?.length ? (
@@ -104,7 +106,7 @@ function Show({ user }) {
               ""
             )}
           </div>
-          <div class="col-6 col-md-10">
+          <div class=" col-10">
             {user && (
               <div ref={detailsRef}>
                 <div  style={{ }}>{input}</div>
@@ -113,7 +115,7 @@ function Show({ user }) {
                   <div class="accordion-item bg-dark " >
                     <h2 class="accordion-header ">
                       <button
-                        class="accordion-button"
+                        class="accordion-button bg-secondary text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
@@ -246,7 +248,7 @@ function Show({ user }) {
                   <div class="accordion-item  bg-dark">
                     <h2 class="accordion-header">
                       <button
-                        class="accordion-button collapsed"
+                        class="accordion-button collapsed  bg-secondary text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -266,7 +268,7 @@ function Show({ user }) {
                   {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
                   <select
                     ref={soupRef}
-                    class="form-select-lg"
+                    class="form-select-lg  bg-dark text-white"
                     style={{ whiteSpace: "normal", overflow: "hidden" }}
                     onChange={(e) => setInput(e.target.value)}
                     multiple
@@ -374,7 +376,7 @@ function Show({ user }) {
                   <div class="accordion-item  bg-dark">
                     <h2 class="accordion-header">
                       <button
-                        class="accordion-button collapsed"
+                        class="accordion-button collapsed  bg-secondary text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -394,7 +396,7 @@ function Show({ user }) {
                   {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
                   <select
                     ref={drinksRef}
-                    class="form-select-lg"
+                    class="form-select-lg  bg-dark text-white"
                     style={{ whiteSpace: "normal", overflow: "hidden" }}
                     onChange={(e) => setInput(e.target.value)}
                     multiple
@@ -502,9 +504,9 @@ function Show({ user }) {
                 
               </div>
             )}
-
+            {/* Buttons */}
             <div className="buttons">
-              {order.user === user && (
+              {user && (
                 <button onClick={handleDeleteOrder}>Delete</button>
               )}
               <Link to="/orders">
