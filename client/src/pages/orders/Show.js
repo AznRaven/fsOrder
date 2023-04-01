@@ -60,7 +60,7 @@ function Show({ user }) {
   }
 
   return (
-    <div className=" bg-dark text-white text-center">
+    <div className="text-center">
       <div className="a-order">
         <h2>{order.subject}</h2>
         <h5 style={{ opacity: ".3" }} className="m-0">
@@ -70,7 +70,7 @@ function Show({ user }) {
         </h5>
         <div className="p-body m-0">{order.body}</div>
         <div class="row g-0 text-center">
-          <div class="col-sm-6 col-md-2 ">
+          <div class="col-sm-6 col-md-2 border-end">
             {order.comments?.length ? (
               <>
               <br/>
@@ -82,9 +82,9 @@ function Show({ user }) {
                     <div key={i} className="comm">
                       <div>{comment.user}</div>
                       <div>{comment.body}</div>
-                      {comment.user === user && (
+                      { user && (
                         <>
-                          <button onClick={() => handleDeleteComment(comment)}>
+                          <button className="text-danger" onClick={() => handleDeleteComment(comment)}>
                             X
                           </button>
                           <Link
@@ -108,7 +108,7 @@ function Show({ user }) {
             {user && (
               <div ref={detailsRef}>
                 <div  style={{ }}>{input}</div>
-                <div class="accordion accordion-flush bg-dark" data-bs-theme="dark" id="accordionExample">
+                <div class="accordion accordion-flush" id="accordionExample">
                   {/* Pho */}
                   <div class="accordion-item bg-dark " >
                     <h2 class="accordion-header ">

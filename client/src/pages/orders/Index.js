@@ -123,7 +123,7 @@ function Index({ user }) {
               <div
                 className={`a-order order m-2 shadow ${
                   new Date() - new Date(order.createdAt) > 30 * 60 * 1000
-                    ? "text-danger"
+                    ? "text-white"
                     : ""
                 }`}
                 style={{
