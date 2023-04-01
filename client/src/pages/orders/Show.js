@@ -505,12 +505,15 @@ function Show({ user }) {
               </div>
             )}
             {/* Buttons */}
-            <div className="buttons">
+            <div className="d-flex justify-content-evenly">
               {user && (
-                <button onClick={handleDeleteOrder}>Delete</button>
+                // <button onClick={handleDeleteOrder}>Delete</button>
+                <button type="button" onClick={handleDeleteOrder} style={{width: "8vw"}} class="btn btn-outline-danger">Delete Order</button>
+
               )}
               <Link to="/orders">
-                <button>Back</button>
+                {/* <button>Back</button> */}
+                <button type="button" class="btn btn-outline-light">All Orders</button>
               </Link>
             </div>
           </div>
