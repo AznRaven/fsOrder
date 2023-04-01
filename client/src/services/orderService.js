@@ -22,7 +22,7 @@ export async function getOrder(id) {
 }
 
 export async function deleteOrder(id) {
-    const axios = customAxiosWithAuth()
+    const axios = customAxios()
     try {
         await axios.delete(`/orders/${id}`)
     } catch(err) {

@@ -13,7 +13,8 @@ router.get('/seed', orderControl.seed)
 router.get('/', orderControl.index)
 
 // delete
-router.delete('/:id', authorize, confirmUserAccess, orderControl.delete)
+// router.delete('/:id', authorize, confirmUserAccess, orderControl.delete)
+router.delete('/:id', orderControl.delete)
 
 // update
 router.put('/:id', authorize, confirmUserAccess, orderControl.update)

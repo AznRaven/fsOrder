@@ -135,21 +135,7 @@ function Show({ user }) {
                     >
                       <div class="accordion-body">
                         <form onSubmit={handleSubmit}>
-                          {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
-                          {/* <select
-                            ref={phoRef}
-                            class="form-select-lg bg-dark text-white"
-                            style={{ whiteSpace: "normal", overflow: "hidden" }}
-                            onChange={(e) => setInput(e.target.value)}
-                            multiple
-                            aria-label="multiple select example"
-                            
-                          >
-                            <option selected>Open this select menu</option>
-                            <option  value="Chicken Pho">Chicken Pho</option>
-                            <option value="Beef Pho">Beef Pho</option>
-                            <option value="Pork Pho">Pork Pho</option>
-                          </select> */}
+                          
                           <div className="d-flex justify-content-evenly">
                             <div className="d-flex flex-column ">
                               <label for="floatingInput" className="text-white">
@@ -299,20 +285,38 @@ function Show({ user }) {
                     >
                       <div class="accordion-body">
                         <form onSubmit={handleSubmit}>
-                          {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
-                          <select
-                            ref={soupRef}
-                            class="form-select-lg  bg-dark text-white"
-                            style={{ whiteSpace: "normal", overflow: "hidden" }}
-                            onChange={(e) => setInput(e.target.value)}
-                            multiple
-                            aria-label="multiple select example"
-                          >
-                            {/* <option selected>Open this select menu</option> */}
-                            <option value="Chicken Soup">Chicken Soup</option>
-                            <option value="Beef Soup">Beef Soup</option>
-                            <option value="Pork Soup">Pork Soup</option>
-                          </select>
+                        <div className="d-flex justify-content-evenly">
+                            <div className="d-flex flex-column ">
+                              <label for="floatingInput" className="text-white">
+                                Chicken Soup
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Chicken Soup")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
+                              ></img>
+                            </div>
+                            <div className="d-flex flex-column">
+                              <label for="floatingInput" className="text-white">
+                                Beef Soup
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Beef Soup")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
+                              ></img>
+                            </div>
+                            <div className="d-flex flex-column">
+                              <label for="floatingInput" className="text-white">
+                                Pork Soup
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Pork Soup")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
+                              ></img>
+                            </div>
+                          </div>
 
                           <div>
                             {input && (
@@ -431,20 +435,38 @@ function Show({ user }) {
                     >
                       <div class="accordion-body">
                         <form onSubmit={handleSubmit}>
-                          {/* <textarea ref={bodyRef} id="lc" cols="1" rows="1" /> */}
-                          <select
-                            ref={drinksRef}
-                            class="form-select-lg  bg-dark text-white"
-                            style={{ whiteSpace: "normal", overflow: "hidden" }}
-                            onChange={(e) => setInput(e.target.value)}
-                            multiple
-                            aria-label="multiple select example"
-                          >
-                            {/* <option selected>Open this select menu</option> */}
-                            <option value="Water">Water</option>
-                            <option value="Coke">Coke</option>
-                            <option value="Sprite">Sprite</option>
-                          </select>
+                        <div className="d-flex justify-content-evenly">
+                            <div className="d-flex flex-column ">
+                              <label for="floatingInput" className="text-white">
+                                Water
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Water")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
+                              ></img>
+                            </div>
+                            <div className="d-flex flex-column">
+                              <label for="floatingInput" className="text-white">
+                                Sprite
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Sprite")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
+                              ></img>
+                            </div>
+                            <div className="d-flex flex-column">
+                              <label for="floatingInput" className="text-white">
+                                Coke
+                              </label>
+                              <img
+                                onClick={(e) => setInput("Coke")}
+                                className="img-thumbnail rounded "
+                                src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
+                              ></img>
+                            </div>
+                          </div>
 
                           <div>
                             {input && (
