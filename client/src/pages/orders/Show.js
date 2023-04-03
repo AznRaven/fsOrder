@@ -60,7 +60,7 @@ function Show({ user }) {
   }
 
   return (
-    <div className="text-center bg-dark">
+    <div className="text-center">
       {/* Ordered By */}
       <div className="a-order">
         <h2>{order.subject}</h2>
@@ -115,10 +115,10 @@ function Show({ user }) {
                 <div style={{}}>{input}</div>
                 <div class="accordion accordion-flush" id="accordionExample">
                   {/* Pho */}
-                  <div class="accordion-item bg-dark ">
+                  <div class="accordion-item ">
                     <h2 class="accordion-header ">
                       <button
-                        class="accordion-button bg-secondary text-white"
+                        class="accordion-button bg-danger text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseOne"
@@ -138,7 +138,7 @@ function Show({ user }) {
                           
                           <div className="d-flex justify-content-evenly">
                             <div className="d-flex flex-column ">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Chicken Pho
                               </label>
                               <img
@@ -148,7 +148,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Beef Pho
                               </label>
                               <img
@@ -158,7 +158,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Pork Pho
                               </label>
                               <img
@@ -265,10 +265,10 @@ function Show({ user }) {
                     </div>
                   </div>
                   {/* Soup */}
-                  <div class="accordion-item  bg-dark">
+                  <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button
-                        class="accordion-button collapsed  bg-secondary text-white"
+                        class="accordion-button collapsed  bg-danger text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -287,7 +287,7 @@ function Show({ user }) {
                         <form onSubmit={handleSubmit}>
                         <div className="d-flex justify-content-evenly">
                             <div className="d-flex flex-column ">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Chicken Soup
                               </label>
                               <img
@@ -297,7 +297,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Beef Soup
                               </label>
                               <img
@@ -307,7 +307,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Pork Soup
                               </label>
                               <img
@@ -415,10 +415,10 @@ function Show({ user }) {
                     </div>
                   </div>
                   {/* Drinks */}
-                  <div class="accordion-item  bg-dark">
+                  <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button
-                        class="accordion-button collapsed  bg-secondary text-white"
+                        class="accordion-button collapsed bg-danger text-white"
                         type="button"
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -437,7 +437,7 @@ function Show({ user }) {
                         <form onSubmit={handleSubmit}>
                         <div className="d-flex justify-content-evenly">
                             <div className="d-flex flex-column ">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Water
                               </label>
                               <img
@@ -447,7 +447,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Sprite
                               </label>
                               <img
@@ -457,7 +457,7 @@ function Show({ user }) {
                               ></img>
                             </div>
                             <div className="d-flex flex-column">
-                              <label for="floatingInput" className="text-white">
+                              <label for="floatingInput" className="">
                                 Coke
                               </label>
                               <img

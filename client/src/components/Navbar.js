@@ -8,10 +8,10 @@ function Navbar({ user, setUser }) {
   };
 
   return (
-    <ul className="user-auth  bg-dark text-white">
+    <ul className="user-auth">
       {user ? 
         <>
-          <li style={{ color: "white" }}>Welcome {user}!</li>
+          <li>Welcome {user}!</li>
           <li className="posts-nav">
             <Link to="/orders">Orders</Link>
           </li>
