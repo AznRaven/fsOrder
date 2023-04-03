@@ -15,6 +15,7 @@ import Register from "./pages/users/Register";
 import Login from "./pages/users/Login";
 
 import Navbar from "./components/Navbar";
+import About from "./pages/about";
 
 function App() {
   const [user, setUser] = useState({});
@@ -43,6 +44,7 @@ function App() {
       <Navbar user={loggedIn} setUser={setUser} />
       <Routes>
         <Route path="/orders" element={<IndexPost user={loggedIn} />} />
+        <Route path="/about" element={<About user={loggedIn} />} />
         <Route path="/orders/:id" element={<ShowPost user={loggedIn} />} />
         {loggedIn ? (
           <>

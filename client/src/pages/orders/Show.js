@@ -582,7 +582,7 @@ function Show({ user }) {
               )}
               <Link to="/orders">
                 {/* <button>Back</button> */}
-                <button type="button" class="btn btn-outline-light">
+                <button type="button" class="btn btn-outline-dark">
                   All Orders
                 </button>
               </Link>
