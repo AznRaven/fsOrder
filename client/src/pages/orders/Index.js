@@ -121,7 +121,7 @@ function Index({ user }) {
           <div>
             <Link to={`/orders/${order._id}`} key={index}>
               <div
-                className={`a-order order m-2 shadow ${
+                className={`a-order order m-2 text-white shadow ${
                   new Date() - new Date(order.createdAt) > 30 * 60 * 1000
                     ? "text-white"
                     : ""
@@ -138,7 +138,7 @@ function Index({ user }) {
                       : "white",
                 }}>Time: {formatElapsedTime(order.createdAt)}</div>
                 <br />
-                Table: {order.table}
+                <strong className="fs-5">Table: {order.table}</strong>
                 <br />
                 {order.comments.map((x, index) => (
                   <>
