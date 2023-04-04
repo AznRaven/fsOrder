@@ -8,6 +8,7 @@ import { deleteOrder, getOrder } from "../../services/orderService";
 import Drinks from "../../components/Drinks";
 import Pho from "../../components/Pho";
 import Soup from "../../components/Soup";
+import MenuItem from "../../components/MenuItem";
 
 function Show({ user }) {
   const [order, setOrder] = useState({});
@@ -19,8 +20,11 @@ function Show({ user }) {
   const phoRef = useRef();
   const soupRef = useRef();
   const drinksRef = useRef();
-
   const detailsRef = useRef();
+
+  let Categories = ['Pho', 'Soup', 'Drinks']
+
+
 
   useEffect(() => {
     async function loadData() {
@@ -117,6 +121,12 @@ function Show({ user }) {
               <div ref={detailsRef}>
                 <div style={{}}>{input}</div>
                 <div class="accordion accordion-flush" id="accordionExample">
+                  {/* {Categories.map((x,index) => <MenuItem
+                  handleSubmit={handleSubmit}
+                  index={index}
+                  input={input}
+                  setInput={setInput} 
+                  category={x}/>)} */}
                   {/* Pho */}
                   <Pho
                     handleSubmit={handleSubmit}
