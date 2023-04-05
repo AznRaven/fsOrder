@@ -121,12 +121,12 @@ function Show({ user }) {
               <div ref={detailsRef}>
                 <div style={{}}>{input}</div>
                 <div class="accordion accordion-flush" id="accordionExample">
-                  {/* {Categories.map((x,index) => <MenuItem
+                  {Categories.map((x,index) => <MenuItem
                   handleSubmit={handleSubmit}
                   index={index}
                   input={input}
                   setInput={setInput} 
-                  category={x}/>)} */}
+                  category={x}/>)}
                   {/* Pho */}
                   <Pho
                     handleSubmit={handleSubmit}
@@ -155,7 +155,7 @@ function Show({ user }) {
                 <button
                   type="button"
                   onClick={handleDeleteOrder}
-                  style={{ width: "8vw" }}
+                  style={{ width: "9vw" }}
                   class="btn btn-outline-danger"
                 >
                   Delete Order
@@ -163,7 +163,7 @@ function Show({ user }) {
               )}
               <Link to="/orders">
                 {/* <button>Back</button> */}
-                <button type="button" class="btn btn-outline-dark">
+                <button type="button" style={{ width: "9vw" }} class="btn btn-outline-dark">
                   All Orders
                 </button>
               </Link>
