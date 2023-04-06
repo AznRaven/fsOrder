@@ -37,7 +37,7 @@ export default function Pho({ handleSubmit, input, setInput }) {
                       </label>
                       <p>${x.price}</p>
                       <img
-                        onClick={(e) => setInput("Chicken Pho")}
+                        onClick={(e) => setInput(x.name)}
                         className="img-thumbnail rounded "
                         src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
                       ></img>

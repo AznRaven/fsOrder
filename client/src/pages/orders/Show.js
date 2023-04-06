@@ -92,7 +92,7 @@ function Show({ user }) {
                       {user && (
                         <>
                           <button
-                            className="text-danger"
+                            className="btn btn-outline-danger"
                             onClick={() => handleDeleteComment(comment)}
                           >
                             X
