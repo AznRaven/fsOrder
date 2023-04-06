@@ -32,11 +32,11 @@ function New({ user }) {
     <div>
       <h1>Select Table:</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="tbl">Table:</label>
+        {/* <label htmlFor="tbl">Table:</label>
         <br />
         <input type="text" id="tbl" value={table} readOnly />
         <br />
-        <br />
+        <br /> */}
 
         <div>
           {buttons}
