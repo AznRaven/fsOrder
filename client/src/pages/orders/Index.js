@@ -46,7 +46,7 @@ function Index({ user }) {
 
     const interval = setInterval(() => {
       loadData();
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
