@@ -1,6 +1,11 @@
 import MenuBtn from "./MenuBtn";
 
 export default function Drinks({ handleSubmit, input, setInput }) {
+  let drinkItem = [
+    { name: "Water", price: 1.99 },
+    { name: "Sprite", price: 1.99 },
+    { name: "Coke", price: 1.99 },
+  ];
   return (
     <>
       <div class="accordion-item">
@@ -24,36 +29,22 @@ export default function Drinks({ handleSubmit, input, setInput }) {
           <div class="accordion-body">
             <form onSubmit={handleSubmit}>
               <div className="d-flex justify-content-evenly">
-                <div className="d-flex flex-column ">
-                  <label for="floatingInput" className="">
-                    Water
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Water")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
-                  ></img>
-                </div>
-                <div className="d-flex flex-column">
-                  <label for="floatingInput" className="">
-                    Sprite
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Sprite")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
-                  ></img>
-                </div>
-                <div className="d-flex flex-column">
-                  <label for="floatingInput" className="">
-                    Coke
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Coke")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
-                  ></img>
-                </div>
+              {drinkItem.map((x) => {
+                  return (
+                    <div className="d-flex flex-column ">
+                      <label for="floatingInput" className="">
+                        {x.name}
+                      </label>
+                      <p>${x.price}</p>
+                      <img
+                        onClick={(e) => setInput("Chicken Pho")}
+                        className="img-thumbnail rounded "
+                        src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680342587/fsOrder/coke_bfk3jy.png"
+                      ></img>
+                    </div>
+                  );
+                })}
+                
               </div>
 
               <MenuBtn handleSubmit={handleSubmit} input={input} />

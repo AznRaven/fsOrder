@@ -1,6 +1,11 @@
 import MenuBtn from "./MenuBtn";
 
 export default function Pho({ handleSubmit, input, setInput }) {
+  let phoItem = [
+    { name: "Chicken Pho", price: 8.99 },
+    { name: "Beef Pho", price: 9.99 },
+    { name: "Pork Pho", price: 8.99 },
+  ];
   return (
     <>
       <div class="accordion-item ">
@@ -24,36 +29,21 @@ export default function Pho({ handleSubmit, input, setInput }) {
           <div class="accordion-body">
             <form onSubmit={handleSubmit}>
               <div className="d-flex justify-content-evenly">
-                <div className="d-flex flex-column ">
-                  <label for="floatingInput" className="">
-                    Chicken Pho
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Chicken Pho")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
-                  ></img>
-                </div>
-                <div className="d-flex flex-column">
-                  <label for="floatingInput" className="">
-                    Beef Pho
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Beef Pho")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
-                  ></img>
-                </div>
-                <div className="d-flex flex-column">
-                  <label for="floatingInput" className="">
-                    Pork Pho
-                  </label>
-                  <img
-                    onClick={(e) => setInput("Pork Pho")}
-                    className="img-thumbnail rounded "
-                    src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
-                  ></img>
-                </div>
+                {phoItem.map((x) => {
+                  return (
+                    <div className="d-flex flex-column ">
+                      <label for="floatingInput" className="">
+                        {x.name}
+                      </label>
+                      <p>${x.price}</p>
+                      <img
+                        onClick={(e) => setInput("Chicken Pho")}
+                        className="img-thumbnail rounded "
+                        src="https://res.cloudinary.com/djzwz76tr/image/upload/v1680339722/fsOrder/pho1_eevlyc.jpg"
+                      ></img>
+                    </div>
+                  );
+                })}
               </div>
               <MenuBtn handleSubmit={handleSubmit} input={input} />
             </form>{" "}
