@@ -153,7 +153,7 @@ function Show({ user }) {
                 <button
                   type="button"
                   onClick={handleDeleteOrder}
-                  style={{ width: "9vw" }}
+                  style={{ width: "10vw" }}
                   class="btn btn-outline-danger"
                 >
                   Delete Order
