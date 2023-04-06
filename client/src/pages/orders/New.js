@@ -19,14 +19,10 @@ function New({ user }) {
     navigate(`/orders/${id}`);
   }
 
-  function handleTableClick(num) {
-    setTable(num);
-  }
-
   const buttons = [];
   for (let i = 1; i <= 20; i++) {
     buttons.push(
-      <button key={i} onClick={() => handleTableClick(i)}>
+      <button key={i} onClick={() => setTable(i)}>
         {i}
       </button>
     );
@@ -34,7 +30,7 @@ function New({ user }) {
 
   return (
     <div>
-      <h1>New Order</h1>
+      <h1>Select Table:</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="tbl">Table:</label>
         <br />

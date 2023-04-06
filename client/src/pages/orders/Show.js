@@ -16,10 +16,9 @@ function Show({ user }) {
 
   const navigate = useNavigate();
   const params = useParams();
-  const bodyRef = useRef();
-  const phoRef = useRef();
-  const soupRef = useRef();
-  const drinksRef = useRef();
+  // const phoRef = useRef();
+  // const soupRef = useRef();
+  // const drinksRef = useRef();
   const detailsRef = useRef();
 
   let Categories = ['Pho', 'Soup', 'Drinks']
@@ -61,7 +60,6 @@ function Show({ user }) {
     let updatedOrder = { ...order };
     updatedOrder.comments.push(newComment);
     setOrder(updatedOrder);
-    bodyRef.current.value = "";
     detailsRef.current.open = false;
     setInput(null);
   }
@@ -121,12 +119,12 @@ function Show({ user }) {
               <div ref={detailsRef}>
                 <div style={{}}>{input}</div>
                 <div class="accordion accordion-flush" id="accordionExample">
-                  {Categories.map((x,index) => <MenuItem
+                  {/* {Categories.map((x,index) => <MenuItem
                   handleSubmit={handleSubmit}
                   index={index}
                   input={input}
                   setInput={setInput} 
-                  category={x}/>)}
+                  category={x}/>)} */}
                   {/* Pho */}
                   <Pho
                     handleSubmit={handleSubmit}
