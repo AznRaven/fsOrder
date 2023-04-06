@@ -153,7 +153,7 @@ function Show({ user }) {
                 <button
                   type="button"
                   onClick={handleDeleteOrder}
-                  style={{ width: "10vw" }}
+                  style={{ width: "12vw" }}
                   class="btn btn-outline-danger"
                 >
                   Delete Order
@@ -161,7 +161,7 @@ function Show({ user }) {
               )}
               <Link to="/orders">
                 {/* <button>Back</button> */}
-                <button type="button" style={{ width: "9vw" }} class="btn btn-outline-dark">
+                <button type="button" style={{ width: "12vw" }} class="btn btn-outline-dark">
                   All Orders
                 </button>
               </Link>
